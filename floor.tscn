@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckp7gagts6mhg"]
+
+[ext_resource type="Texture2D" uid="uid://bf4o2f1yleemk" path="res://background.png" id="1_6vree"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fk6t3"]
+size = Vector2(1147, 20)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(1.2, 1.34551)
+texture = ExtResource("1_6vree")
+region_enabled = true
+region_rect = Rect2(0, 463.068, 960, 15.932)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_fk6t3")
