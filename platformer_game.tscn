@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bi14cpsxonkhw"]
+[gd_scene load_steps=5 format=3 uid="uid://bi14cpsxonkhw"]
 
 [ext_resource type="Texture2D" uid="uid://bf4o2f1yleemk" path="res://background.png" id="1_4382m"]
 [ext_resource type="PackedScene" uid="uid://dolodrypyt3q0" path="res://player.gd.tscn" id="2_opmgh"]
 [ext_resource type="PackedScene" uid="uid://ckp7gagts6mhg" path="res://floor.tscn" id="3_dqpf4"]
+[ext_resource type="PackedScene" uid="uid://bqc854ok58jy8" path="res://enemy.tscn" id="4_eises"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -11,8 +12,50 @@ position = Vector2(575, 320.75)
 scale = Vector2(1.20208, 1.34134)
 texture = ExtResource("1_4382m")
 
+[node name="Background2" type="Sprite2D" parent="."]
+position = Vector2(1724.5, 322.25)
+scale = Vector2(1.19062, 1.34342)
+texture = ExtResource("1_4382m")
+
+[node name="Background3" type="Sprite2D" parent="Background2"]
+position = Vector2(-1621.42, -0.186091)
+scale = Vector2(0.839895, 0.998446)
+texture = ExtResource("1_4382m")
+region_enabled = true
+region_rect = Rect2(527, 1, 430, 479)
+
 [node name="StaticBody2D" parent="." instance=ExtResource("3_dqpf4")]
 position = Vector2(577, 631)
 
+[node name="StaticBody2D2" parent="." instance=ExtResource("3_dqpf4")]
+position = Vector2(1725, 631)
+
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_opmgh")]
 position = Vector2(98, 546)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(4, -162)
+scale = Vector2(1.51288, -112.954)
+zoom = Vector2(1.25, 1.25)
+
+[node name="CharacterBody2D2" parent="." instance=ExtResource("4_eises")]
+position = Vector2(1514, 550)
+
+[node name="CharacterBody2D3" parent="." instance=ExtResource("4_eises")]
+position = Vector2(1141, 550)
+
+[node name="CharacterBody2D4" parent="." instance=ExtResource("4_eises")]
+position = Vector2(1835, 548)
+
+[node name="Background3" type="Sprite2D" parent="."]
+position = Vector2(2863, 309)
+scale = Vector2(1.36458, 1.35804)
+texture = ExtResource("1_4382m")
+region_enabled = true
+region_rect = Rect2(0, 0, 826, 459)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("3_dqpf4")]
+position = Vector2(2858, 27)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("3_dqpf4")]
+position = Vector2(-567, 630)

@@ -12,7 +12,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_shoot"):
 		var fireball_temp = fireball.instantiate()
-		fireball_temp.direction = -1
+		fireball_temp.direction = 1
 		add_child(fireball_temp)
 	
 	# Add the gravity.
@@ -32,7 +32,5 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
-
-
 
 
