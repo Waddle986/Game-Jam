@@ -1,19 +1,27 @@
 [gd_scene load_steps=4 format=3 uid="uid://bqc854ok58jy8"]
 
-[ext_resource type="Script" path="res://enemy.gd" id="1_mttrr"]
+[ext_resource type="Script" uid="uid://b60nqpwkgpw2" path="res://enemy.gd" id="1_mttrr"]
 [ext_resource type="Texture2D" uid="uid://diuq4s7ocutp" path="res://Untitled_drawing-removebg-preview.png" id="2_girew"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nl0vd"]
 size = Vector2(96, 133)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Enemy" type="CharacterBody2D"]
 position = Vector2(1, 0)
 script = ExtResource("1_mttrr")
 
-[node name="UntitledDrawing-removebg-preview" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-2, -1)
 scale = Vector2(0.360442, 0.387689)
 texture = ExtResource("2_girew")
+
+[node name="LedgeCheck" type="RayCast2D" parent="."]
+position = Vector2(-55, 32)
+
+[node name="WallCheck" type="RayCast2D" parent="."]
+position = Vector2(-54, -9.53674e-07)
+rotation = 1.31803
+target_position = Vector2(-12.974, 51.3875)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-5, 2.5)

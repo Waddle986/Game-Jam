@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://bi14cpsxonkhw"]
+[gd_scene load_steps=8 format=3 uid="uid://bi14cpsxonkhw"]
 
 [ext_resource type="Texture2D" uid="uid://bf4o2f1yleemk" path="res://background.png" id="1_4382m"]
 [ext_resource type="PackedScene" uid="uid://dolodrypyt3q0" path="res://player.gd.tscn" id="2_opmgh"]
 [ext_resource type="PackedScene" uid="uid://ckp7gagts6mhg" path="res://floor.tscn" id="3_dqpf4"]
+[ext_resource type="Script" uid="uid://cunr1jhdygfqw" path="res://camera_2d.gd" id="4_7hi1j"]
 [ext_resource type="PackedScene" uid="uid://bqc854ok58jy8" path="res://enemy.tscn" id="4_eises"]
+[ext_resource type="PackedScene" uid="uid://c4dfojwnc8ncm" path="res://block.tscn" id="4_vs4rv"]
+[ext_resource type="PackedScene" uid="uid://obf1vgk13u81" path="res://potion.tscn" id="5_bl7hc"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -24,38 +27,164 @@ texture = ExtResource("1_4382m")
 region_enabled = true
 region_rect = Rect2(527, 1, 430, 479)
 
-[node name="StaticBody2D" parent="." instance=ExtResource("3_dqpf4")]
-position = Vector2(577, 631)
-
-[node name="StaticBody2D2" parent="." instance=ExtResource("3_dqpf4")]
-position = Vector2(1725, 631)
-
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_opmgh")]
-position = Vector2(98, 546)
-
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(4, -162)
-scale = Vector2(1.51288, -112.954)
-zoom = Vector2(1.25, 1.25)
-
-[node name="CharacterBody2D2" parent="." instance=ExtResource("4_eises")]
-position = Vector2(1514, 550)
-
-[node name="CharacterBody2D3" parent="." instance=ExtResource("4_eises")]
-position = Vector2(1141, 550)
-
-[node name="CharacterBody2D4" parent="." instance=ExtResource("4_eises")]
-position = Vector2(1835, 548)
-
-[node name="Background3" type="Sprite2D" parent="."]
-position = Vector2(2863, 309)
-scale = Vector2(1.36458, 1.35804)
+[node name="Background4" type="Sprite2D" parent="Background2"]
+position = Vector2(956.224, -9.86288)
+scale = Vector2(1.14611, 1.01088)
 texture = ExtResource("1_4382m")
 region_enabled = true
 region_rect = Rect2(0, 0, 826, 459)
 
-[node name="StaticBody2D3" parent="." instance=ExtResource("3_dqpf4")]
-position = Vector2(2858, 27)
+[node name="Background5" type="Sprite2D" parent="Background2"]
+position = Vector2(958.744, 439.736)
+scale = Vector2(1.18708, 1.03)
+texture = ExtResource("1_4382m")
+region_enabled = true
+region_rect = Rect2(8, 29, 808, 430)
+
+[node name="Background3" type="Sprite2D" parent="."]
+position = Vector2(4006, 323)
+scale = Vector2(1.19687, 1.35386)
+texture = ExtResource("1_4382m")
+
+[node name="Background4" type="Sprite2D" parent="."]
+position = Vector2(5159, 309)
+scale = Vector2(1.21354, 1.34551)
+texture = ExtResource("1_4382m")
+region_enabled = true
+region_rect = Rect2(0, 0, 960, 461)
+
+[node name="Background5" type="Sprite2D" parent="."]
+position = Vector2(6319, 322)
+scale = Vector2(1.20313, 1.35595)
+texture = ExtResource("1_4382m")
+
+[node name="StaticBody2D" parent="." instance=ExtResource("3_dqpf4")]
+position = Vector2(574, 631)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("3_dqpf4")]
+position = Vector2(1725, 631)
+
+[node name="player" parent="." instance=ExtResource("2_opmgh")]
+position = Vector2(270, 555)
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+position = Vector2(305, -226)
+scale = Vector2(1.51288, -112.954)
+script = ExtResource("4_7hi1j")
+
+[node name="Enemy1" parent="." instance=ExtResource("4_eises")]
+position = Vector2(1100, 544)
+
+[node name="Enemy2" parent="." instance=ExtResource("4_eises")]
+position = Vector2(1489, 541)
+
+[node name="Enemy3" parent="." instance=ExtResource("4_eises")]
+position = Vector2(1883, 539)
 
 [node name="StaticBody2D4" parent="." instance=ExtResource("3_dqpf4")]
 position = Vector2(-567, 630)
+
+[node name="StaticBody2D5" parent="." instance=ExtResource("4_vs4rv")]
+position = Vector2(2454, 531)
+
+[node name="StaticBody2D6" parent="." instance=ExtResource("4_vs4rv")]
+position = Vector2(2707, 461)
+
+[node name="StaticBody2D7" parent="." instance=ExtResource("4_vs4rv")]
+position = Vector2(2809, 461)
+
+[node name="StaticBody2D8" parent="." instance=ExtResource("4_vs4rv")]
+position = Vector2(3111, 560)
+
+[node name="StaticBody2D9" parent="." instance=ExtResource("4_vs4rv")]
+position = Vector2(3213, 560)
+
+[node name="StaticBody2D10" parent="." instance=ExtResource("3_dqpf4")]
+position = Vector2(4006, 635)
+
+[node name="Potion" parent="." instance=ExtResource("5_bl7hc")]
+position = Vector2(451, 564)
+
+[node name="Potion2" parent="." instance=ExtResource("5_bl7hc")]
+position = Vector2(2702, 392)
+
+[node name="Potion3" parent="." instance=ExtResource("5_bl7hc")]
+position = Vector2(2809, 393)
+
+[node name="Potion4" parent="." instance=ExtResource("5_bl7hc")]
+position = Vector2(3221, 493)
+
+[node name="Potion5" parent="." instance=ExtResource("5_bl7hc")]
+position = Vector2(2454, 463)
+
+[node name="Potion6" parent="." instance=ExtResource("5_bl7hc")]
+position = Vector2(3106, 493)
+
+[node name="Potion7" parent="." instance=ExtResource("5_bl7hc")]
+position = Vector2(3847, 576)
+
+[node name="Potion8" parent="." instance=ExtResource("5_bl7hc")]
+position = Vector2(4021, 575)
+
+[node name="Potion9" parent="." instance=ExtResource("5_bl7hc")]
+position = Vector2(4203, 579)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("4_vs4rv")]
+position = Vector2(4798, 521)
+
+[node name="StaticBody2D11" parent="." instance=ExtResource("4_vs4rv")]
+position = Vector2(4902, 521)
+
+[node name="StaticBody2D12" parent="." instance=ExtResource("4_vs4rv")]
+position = Vector2(5148, 394)
+
+[node name="StaticBody2D13" parent="." instance=ExtResource("4_vs4rv")]
+position = Vector2(5250, 394)
+
+[node name="StaticBody2D14" parent="." instance=ExtResource("4_vs4rv")]
+position = Vector2(5503, 293)
+
+[node name="StaticBody2D15" parent="." instance=ExtResource("4_vs4rv")]
+position = Vector2(5602, 293)
+
+[node name="StaticBody2D16" parent="." instance=ExtResource("4_vs4rv")]
+position = Vector2(5703, 293)
+
+[node name="Potion10" parent="." instance=ExtResource("5_bl7hc")]
+position = Vector2(4797, 457)
+
+[node name="Potion11" parent="." instance=ExtResource("5_bl7hc")]
+position = Vector2(4903, 456)
+
+[node name="Potion12" parent="." instance=ExtResource("5_bl7hc")]
+position = Vector2(5146, 319)
+
+[node name="Potion13" parent="." instance=ExtResource("5_bl7hc")]
+position = Vector2(5249, 321)
+
+[node name="Potion14" parent="." instance=ExtResource("5_bl7hc")]
+position = Vector2(5502, 227)
+
+[node name="Potion15" parent="." instance=ExtResource("5_bl7hc")]
+position = Vector2(5604, 221)
+
+[node name="Potion16" parent="." instance=ExtResource("5_bl7hc")]
+position = Vector2(5698, 225)
+
+[node name="StaticBody2D17" parent="." instance=ExtResource("3_dqpf4")]
+position = Vector2(6315, 635)
+
+[node name="Potion17" parent="." instance=ExtResource("5_bl7hc")]
+position = Vector2(6069, 580)
+
+[node name="Potion18" parent="." instance=ExtResource("5_bl7hc")]
+position = Vector2(6166, 584)
+
+[node name="Potion19" parent="." instance=ExtResource("5_bl7hc")]
+position = Vector2(6258, 583)
+
+[node name="Potion20" parent="." instance=ExtResource("5_bl7hc")]
+position = Vector2(6350, 583)
+
+[node name="Enemy" parent="." instance=ExtResource("4_eises")]
+position = Vector2(6603, 553)
